@@ -7,6 +7,7 @@ Group:		Development/Other
 URL:		http://premake.sourceforge.net/
 Source0:	http://ovh.dl.sourceforge.net/sourceforge/premake/%{name}-src-%{version}.zip
 BuildRequires:	lua-devel
+BuildRoot:	%{_tmppath}/%{name}-root
 
 %description
 Premake is a build script generator. Describe your project using the
