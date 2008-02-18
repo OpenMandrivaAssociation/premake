@@ -1,4 +1,4 @@
-Summary:	Premake is a build script generator
+Summary:	Build script generator
 Name:		premake
 Version:	3.2
 Release:	%mkrel 1
