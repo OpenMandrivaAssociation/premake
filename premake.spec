@@ -1,7 +1,7 @@
 Summary:	Build script generator
 Name:		premake
 Version:	3.2
-Release:	%mkrel 2
+Release:	%mkrel 4
 License:	GPL
 Group:		Development/Other
 URL:		http://premake.sourceforge.net/
