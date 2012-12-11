@@ -59,3 +59,39 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %{_bindir}/%{name}
 
 
+
+
+%changelog
+* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 3.2-6mdv2010.0
++ Revision: 430779
+- rebuild
+
+* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.2-5mdv2009.0
++ Revision: 259285
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.2-4mdv2009.0
++ Revision: 247215
+- rebuild
+
+* Mon Feb 18 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.2-2mdv2008.1
++ Revision: 171051
+- rebuild
+- fix "foobar is blabla" summary (=> "blabla") so that it looks nice in rpmdrake
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 3.2-1mdv2008.1
++ Revision: 140737
+- restore BuildRoot
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Tue Mar 06 2007 Oden Eriksson <oeriksson@mandriva.com> 3.2-1mdv2007.0
++ Revision: 133985
+- fix build
+- Import premake
+
+* Tue Mar 06 2007 Oden Eriksson <oeriksson@mandriva.com> 3.2-1mdv2007.1
+- initial Mandriva package
+
