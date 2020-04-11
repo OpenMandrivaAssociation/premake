@@ -8,7 +8,10 @@ License:	GPL
 Group:		Development/Other
 URL:            http://industriousone.com/premake
 Source0:        http://downloads.sourceforge.net/%{name}/premake-%{version}-%{pre_rel}-src.zip
-Patch0:         premake-4.4-mga-fdr-system-lua.patch
+Patch0:         premake-4.4-use-system-lua.patch
+Patch1:         premake-4.3-manpage.patch
+Patch2:         premake-4.4-parallel-build.patch
+
 
 BuildRequires:  doxygen
 BuildRequires:  pkgconfig(lua) > 5.0
