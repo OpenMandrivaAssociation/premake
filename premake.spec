@@ -10,8 +10,9 @@ URL:            http://industriousone.com/premake
 Source0:        http://downloads.sourceforge.net/%{name}/premake-%{version}-%{pre_rel}-src.zip
 
 BuildRequires:  doxygen
-BuildRequires:  pkgconfig(lua) > 5.0
-BuildRequires:  pkgconfig(lua) < 5.2
+#BuildRequires:  pkgconfig(lua) > 5.0
+#BuildRequires:  pkgconfig(lua) < 5.2
+BuildRequires:  lua-devel
 BuildRequires:  readline-devel
 
 %description
@@ -33,8 +34,8 @@ files for:
 sed -i -e "s|\$(LDFLAGS) -L. -s|\$(LDFLAGS) -L.|" build/gmake.unix/Premake4.make
 
 %build
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 
 pushd build/gmake.unix/
 %set_build_flags
