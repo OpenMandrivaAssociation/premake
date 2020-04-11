@@ -14,9 +14,9 @@ Patch2:         premake-4.4-parallel-build.patch
 
 
 BuildRequires:  doxygen
-#BuildRequires:  pkgconfig(lua) > 5.0
-#BuildRequires:  pkgconfig(lua) < 5.2
-BuildRequires:  lua-devel
+BuildRequires:  pkgconfig(lua) > 5.0
+BuildRequires:  pkgconfig(lua) < 5.2
+#BuildRequires:  lua-devel
 BuildRequires:  readline-devel
 
 %description
