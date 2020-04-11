@@ -33,6 +33,9 @@ files for:
 sed -i -e "s|\$(LDFLAGS) -L. -s|\$(LDFLAGS) -L.|" build/gmake.unix/Premake4.make
 
 %build
+export CC=gcc
+export CXX=g++
+
 pushd build/gmake.unix/
 %set_build_flags
 %make
