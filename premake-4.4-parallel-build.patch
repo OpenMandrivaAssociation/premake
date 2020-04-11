@@ -1,0 +1,98 @@
+Index: premake-4.4-beta5/build/gmake.unix/Premake4.make
+===================================================================
+--- premake-4.4-beta5/build/gmake.unix/Premake4.make
++++ premake-4.4-beta5/build/gmake.unix/Premake4.make	2014-06-24 01:01:59.163954115 +0200
+@@ -141,75 +141,75 @@
+ 	$(SILENT) $(CC) -x c-header $(ALL_CFLAGS) -MMD -MP $(DEFINES) $(INCLUDES) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
+ endif
+ 
+-$(OBJDIR)/os_chdir.o: ../../src/host/os_chdir.c
++$(OBJDIR)/os_chdir.o: ../../src/host/os_chdir.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_copyfile.o: ../../src/host/os_copyfile.c
++$(OBJDIR)/os_copyfile.o: ../../src/host/os_copyfile.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_getcwd.o: ../../src/host/os_getcwd.c
++$(OBJDIR)/os_getcwd.o: ../../src/host/os_getcwd.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_getversion.o: ../../src/host/os_getversion.c
++$(OBJDIR)/os_getversion.o: ../../src/host/os_getversion.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_is64bit.o: ../../src/host/os_is64bit.c
++$(OBJDIR)/os_is64bit.o: ../../src/host/os_is64bit.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_isdir.o: ../../src/host/os_isdir.c
++$(OBJDIR)/os_isdir.o: ../../src/host/os_isdir.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_isfile.o: ../../src/host/os_isfile.c
++$(OBJDIR)/os_isfile.o: ../../src/host/os_isfile.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_match.o: ../../src/host/os_match.c
++$(OBJDIR)/os_match.o: ../../src/host/os_match.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_mkdir.o: ../../src/host/os_mkdir.c
++$(OBJDIR)/os_mkdir.o: ../../src/host/os_mkdir.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_pathsearch.o: ../../src/host/os_pathsearch.c
++$(OBJDIR)/os_pathsearch.o: ../../src/host/os_pathsearch.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_rmdir.o: ../../src/host/os_rmdir.c
++$(OBJDIR)/os_rmdir.o: ../../src/host/os_rmdir.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_stat.o: ../../src/host/os_stat.c
++$(OBJDIR)/os_stat.o: ../../src/host/os_stat.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/os_uuid.o: ../../src/host/os_uuid.c
++$(OBJDIR)/os_uuid.o: ../../src/host/os_uuid.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/path_isabsolute.o: ../../src/host/path_isabsolute.c
++$(OBJDIR)/path_isabsolute.o: ../../src/host/path_isabsolute.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/premake.o: ../../src/host/premake.c
++$(OBJDIR)/premake.o: ../../src/host/premake.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/premake_main.o: ../../src/host/premake_main.c
++$(OBJDIR)/premake_main.o: ../../src/host/premake_main.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/scripts.o: ../../src/host/scripts.c
++$(OBJDIR)/scripts.o: ../../src/host/scripts.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
+-$(OBJDIR)/string_endswith.o: ../../src/host/string_endswith.c
++$(OBJDIR)/string_endswith.o: ../../src/host/string_endswith.c $(OBJDIR)
+ 	@echo $(notdir $<)
+ 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+ 
