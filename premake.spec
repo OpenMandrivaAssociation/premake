@@ -3,11 +3,11 @@
 Summary:	Build script generator
 Name:		premake
 Version:	4.4
-Release:	%mkrel -c %{pre_rel} 1
+Release:	%{?pre_rel:0.%{pre_rel}.}1
 License:	GPL
 Group:		Development/Other
-URL:            http://industriousone.com/premake
-Source0:        http://downloads.sourceforge.net/%{name}/premake-%{version}-%{pre_rel}-src.zip
+URL:            http://premake.github.io/
+Source0:        http://downloads.sourceforge.net/%{name}/premake-%{version}%{?pre_rel:-%{pre_rel}}-src.zip
 Patch0:         premake-4.4-use-system-lua.patch
 Patch1:         premake-4.3-manpage.patch
 Patch2:         premake-4.4-parallel-build.patch
@@ -31,16 +31,12 @@ files for:
  * ...more on the way!
 
 %prep
-%setup -q -n %{name}-%{version}-%{pre_rel}
-%autopatch -p1
+%autosetup -p1 -n %{name}-%{version}%{?pre_rel:-%{pre_rel}}
 
-# do not stripping the executable
+# do not strip the executable
 sed -i -e "s|\$(LDFLAGS) -L. -s|\$(LDFLAGS) -L.|" build/gmake.unix/Premake4.make
 
 %build
-#export CC=gcc
-#export CXX=g++
-
 pushd build/gmake.unix/
 %set_build_flags
 %make
@@ -56,41 +52,4 @@ install -m 644 -Dp ./premake4.1 %{buildroot}/%{_mandir}/man1/premake4.1
 %files
 %doc doc/html/* LICENSE.txt README.txt CHANGES.txt
 %{_bindir}/premake4
-%{_mandir}/man1/premake4.1.*
-
-
-
-%changelog
-* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 3.2-6mdv2010.0
-+ Revision: 430779
-- rebuild
-
-* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.2-5mdv2009.0
-+ Revision: 259285
-- rebuild
-
-* Thu Jul 24 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.2-4mdv2009.0
-+ Revision: 247215
-- rebuild
-
-* Mon Feb 18 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.2-2mdv2008.1
-+ Revision: 171051
-- rebuild
-- fix "foobar is blabla" summary (=> "blabla") so that it looks nice in rpmdrake
-
-* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 3.2-1mdv2008.1
-+ Revision: 140737
-- restore BuildRoot
-
-  + Thierry Vignaud <tvignaud@mandriva.com>
-    - kill re-definition of %%buildroot on Pixel's request
-
-
-* Tue Mar 06 2007 Oden Eriksson <oeriksson@mandriva.com> 3.2-1mdv2007.0
-+ Revision: 133985
-- fix build
-- Import premake
-
-* Tue Mar 06 2007 Oden Eriksson <oeriksson@mandriva.com> 3.2-1mdv2007.1
-- initial Mandriva package
-
+%{_mandir}/man1/premake4.1*
