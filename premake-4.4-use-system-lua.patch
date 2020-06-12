@@ -7,7 +7,7 @@ Index: premake-4.4-beta5/build/gmake.unix/Premake4.make
    TARGET     = $(TARGETDIR)/premake4
    DEFINES   += -DNDEBUG -DLUA_USE_POSIX -DLUA_USE_DLOPEN
 -  INCLUDES  += -I../../src/host/lua-5.1.4/src
-+  INCLUDES  += 
++  INCLUDES  += -I/usr/include/luajit-2.1
    ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
    ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os
    ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -15,7 +15,7 @@ Index: premake-4.4-beta5/build/gmake.unix/Premake4.make
    ALL_LDFLAGS   += $(LDFLAGS) -L. -s -rdynamic
    LDDEPS    +=
 -  LIBS      += $(LDDEPS) -lm -ldl
-+  LIBS      += $(LDDEPS) -lm -ldl -llua
++  LIBS      += $(LDDEPS) -lm -ldl -lluajit-5.1
    LINKCMD    = $(CC) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
    define PREBUILDCMDS
    endef
@@ -32,7 +32,7 @@ Index: premake-4.4-beta5/build/gmake.unix/Premake4.make
    ALL_LDFLAGS   += $(LDFLAGS) -L. -rdynamic
    LDDEPS    +=
 -  LIBS      += $(LDDEPS) -lm -ldl
-+  LIBS      += $(LDDEPS) -lm -ldl -llua
++  LIBS      += $(LDDEPS) -lm -ldl -lluajit-5.1
    LINKCMD    = $(CC) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
    define PREBUILDCMDS
    endef
@@ -195,3 +195,14 @@ Index: premake-4.4-beta5/build/gmake.unix/Premake4.make
  -include $(OBJECTS:%.o=%.d)
  ifneq (,$(PCH))
    -include $(OBJDIR)/$(notdir $(PCH)).d
+diff -up premake-4.4-beta5/src/host/premake.c.omv~ premake-4.4-beta5/src/host/premake.c
+--- premake-4.4-beta5/src/host/premake.c.omv~	2020-06-12 21:58:20.571503235 +0200
++++ premake-4.4-beta5/src/host/premake.c	2020-06-12 21:58:42.374748802 +0200
+@@ -17,6 +17,7 @@
+ #define COPYRIGHT      "Copyright (C) 2002-2013 Jason Perkins and the Premake Project"
+ #define ERROR_MESSAGE  "%s\n"
+ 
++#define luaL_getn(L,i)((int)lua_objlen(L,i))
+ 
+ static int process_arguments(lua_State* L, int argc, const char** argv);
+ static int process_option(lua_State* L, const char* arg);
