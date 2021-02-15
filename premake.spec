@@ -3,20 +3,19 @@
 Summary:	Build script generator
 Name:		premake
 Version:	4.4
-Release:	%{?pre_rel:0.%{pre_rel}.}1
+Release:	%{?pre_rel:0.%{pre_rel}.}2
 License:	GPL
 Group:		Development/Other
 URL:            http://premake.github.io/
 Source0:        http://downloads.sourceforge.net/%{name}/premake-%{version}%{?pre_rel:-%{pre_rel}}-src.zip
-Patch0:         premake-4.4-use-system-lua.patch
+# NOT YET... Currently requires a prehistoric version of lua
+# (5.0.x or 5.1.x) and won't work with either lua 5.3 or luajit
+#Patch0:         premake-4.4-use-system-lua.patch
 Patch1:         premake-4.3-manpage.patch
 Patch2:         premake-4.4-parallel-build.patch
 
 
 BuildRequires:  doxygen
-BuildRequires:  pkgconfig(lua) > 5.0
-BuildRequires:  pkgconfig(lua) < 5.2
-#BuildRequires:  lua-devel
 BuildRequires:  readline-devel
 
 %description
