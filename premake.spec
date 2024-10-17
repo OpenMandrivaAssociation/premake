@@ -6,7 +6,7 @@ Version:	4.4
 Release:	%{?pre_rel:0.%{pre_rel}.}2
 License:	GPL
 Group:		Development/Other
-URL:            http://premake.github.io/
+URL:            https://premake.github.io/
 Source0:        http://downloads.sourceforge.net/%{name}/premake-%{version}%{?pre_rel:-%{pre_rel}}-src.zip
 # NOT YET... Currently requires a prehistoric version of lua
 # (5.0.x or 5.1.x) and won't work with either lua 5.3 or luajit
