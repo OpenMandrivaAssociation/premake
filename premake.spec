@@ -15,6 +15,7 @@ Patch1:         premake-4.3-manpage.patch
 Patch2:         premake-4.4-parallel-build.patch
 
 
+BuildRequires:	make
 BuildRequires:  doxygen
 BuildRequires:  readline-devel
 
